@@ -10,7 +10,7 @@ from ip_generator import IPGenerator
 logging.basicConfig(filename="output.log", format="%(message)s", level=logging.DEBUG)
 
 class Router():
-    def __init__(self, inputs, routing_table, life_time=5):
+    def __init__(self, inputs, routing_table, life_time=1):
         self.inputs = inputs
         self.routing_table = routing_table
         self.life_time = life_time
@@ -69,9 +69,7 @@ class Output():
     
     def process(self):
         self.random_process_wait()
-        packet = self.buffer.pop()
-        print('Process: ')
-        packet.print()
+        self.buffer.pop()
     
 
 class RoutingTable():
